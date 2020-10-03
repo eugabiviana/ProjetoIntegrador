@@ -4,16 +4,16 @@ CREATE TABLE `Postagem` (
 	`portfolio` TEXT NOT NULL,
 	`modalidade` varchar(100) NOT NULL,
 	`imagem` blob NOT NULL,
-	`id_usuario_` INT NOT NULL,
-	`id_tema_` INT NOT NULL,
+	`fk_id_usuario` INT NOT NULL,
+	`fk_id_tema` INT NOT NULL,
 	PRIMARY KEY (`id_postagem`)
 );
 
 CREATE TABLE `Tema` (
 	`id_tema` INT NOT NULL,
-	`cadastro` BOOLEAN NOT NULL,
-	`login` varchar(55) NOT NULL,
-	`sobre` TEXT NOT NULL,
+	`titulo` varchar(45) NOT NULL,
+	`descricao` TEXT(500) NOT NULL,
+	`data` DATE NOT NULL,
 	PRIMARY KEY (`id_tema`)
 );
 
@@ -25,7 +25,7 @@ CREATE TABLE `Usuario` (
 	PRIMARY KEY (`id_usuario`)
 );
 
-ALTER TABLE `Postagem` ADD CONSTRAINT `Postagem_fk0` FOREIGN KEY (`id_usuario_`) REFERENCES `Usuario`(`id_usuario`);
+ALTER TABLE `Postagem` ADD CONSTRAINT `Postagem_fk0` FOREIGN KEY (`fk_id_usuario`) REFERENCES `Usuario`(`id_usuario`);
 
-ALTER TABLE `Postagem` ADD CONSTRAINT `Postagem_fk1` FOREIGN KEY (`id_tema_`) REFERENCES `Tema`(`id_tema`);
+ALTER TABLE `Postagem` ADD CONSTRAINT `Postagem_fk1` FOREIGN KEY (`fk_id_tema`) REFERENCES `Tema`(`id_tema`);
 
