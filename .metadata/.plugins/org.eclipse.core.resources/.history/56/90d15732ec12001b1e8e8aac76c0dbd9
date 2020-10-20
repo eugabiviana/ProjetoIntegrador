@@ -1,0 +1,5 @@
+package com.jobster.config;
+
+public class SwaggerConfig {
+
+}

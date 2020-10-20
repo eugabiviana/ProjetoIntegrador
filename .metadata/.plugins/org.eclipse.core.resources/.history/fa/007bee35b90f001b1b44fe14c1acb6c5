@@ -1,0 +1,5 @@
+package com.jobster.security;
+
+public class UserDetailsServiceImpl {
+
+}

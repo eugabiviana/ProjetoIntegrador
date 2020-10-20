@@ -1,0 +1,5 @@
+package com.jobster.service;
+
+public class UsuarioService {
+
+}

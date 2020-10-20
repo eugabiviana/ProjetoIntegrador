@@ -1,0 +1,5 @@
+package com.jobster.repository;
+
+public interface UsuarioRepository {
+
+}
